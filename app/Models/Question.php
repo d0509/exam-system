@@ -13,6 +13,7 @@ class Question extends Model
         'question',
         'marks',
         'status',
+        'created_by'
     ];
 
     public function answers()
