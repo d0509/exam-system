@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\QuestionController;
+use App\Http\Controllers\Admin\ResultController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Student\DashboardController as StudentDashboardController;
@@ -31,6 +32,7 @@ Route::middleware('auth')->group(function () {
         Route::post('update-password', [ProfileController::class, 'updatePassword'])->name('update.password');
         Route::resource('questions', QuestionController::class);
         Route::resource('users', UserController::class);
+        Route::get('result',[ResultController::class, 'index'])->name('result.index');
         Route::post('users/update-status', [UserController::class, 'updateStatus'])->name('users.updateStatus');
     });
 
